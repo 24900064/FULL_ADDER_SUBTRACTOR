@@ -46,10 +46,59 @@ Write the detailed procedure here
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+FULL ADDER
+
+module fulladd (
+
+input a,b,c,
+
+output sum,carry);
+
+wire w1,w2,w3;
+
+assign sum=a^b^c;
+
+assign w1=a&b;
+
+assign w2=b&c;
+
+assign w3=c&a;
+
+assign carry=w1|w2|w3;
+
+endmodule
+
+FULL SUBRACTER
+
+module fullsub(a,b,c,diff,borr);
+
+input a,b,c;
+
+output diff,borr;
+
+wire w1,w2,w3,w4,w5,w6;
+
+xor g1(diff,a,b,c);
+
+and g2(w4,w1,b);
+
+and g3(w5,w1,b);
+
+and g4(w6,b,c);
+
+or g5(borr,w4,w5,w6);
+
+endmodule
+
 
 **RTL Schematic**
 
+![Screenshot 2024-12-25 102026](https://github.com/user-attachments/assets/499729a3-9d18-4d23-819e-9a6b61767066)
+
 **Output Timing Waveform**
+
+![Screenshot 2024-12-25 102536](https://github.com/user-attachments/assets/2bdf0406-47c1-4df7-9de0-fd9ad4342238)
+
 
 **Result:**
 
